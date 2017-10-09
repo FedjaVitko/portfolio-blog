@@ -12,7 +12,7 @@ import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-class ProjectMainPage extends Component {
+class ProjectPage extends Component {
 
     render() {
         const settings = {
@@ -25,23 +25,22 @@ class ProjectMainPage extends Component {
         };
 
         return (
-            <Container>
-                <div style={{ position: 'relative' }}>
-                    <Button icon='left arrow' size='massive' color='white' style={{ position: 'absolute', left: '6em', height: '100%', width: '50px', backgroundColor: 'white' }} /> 
-                    <h1 style={{ textAlign: 'center', letterSpacing: '0.02em', fontWeight: '500', fontSize: '40px', color: 'gray' }}>
-                        Choir Scheduler
-                    </h1>
-                    <Link to='/projects/daily-challenge-app'>
-                    <Button icon='right arrow' size='massive' style={{ position: 'absolute', right: '6em', top: '0', height: '100%', width: '50px', backgroundColor: 'white' }} />
+            <Container style={{ float: 'left' }}>
+                <div style={{ position: 'relative' }} >
+                    <Link to='/projects/choir-scheduler'>
+                        <Button icon='left arrow' size='massive' color='white' style={{ position: 'absolute', left: '2em', height: '100%', width: '50px', backgroundColor: 'white' }} />
                     </Link>
+                    <h1 style={{ textAlign: 'center', letterSpacing: '0.02em', fontWeight: '500', fontSize: '40px', color: 'gray' }}>
+                        Daily Challenge App
+                    </h1>
+                    <Button icon='right arrow' size='massive' style={{ position: 'absolute', right: '2em', top: '0', height: '100%', width: '50px', backgroundColor: 'white' }} />
                 </div>
-                <div style={{ marginTop: '5em', flexDirection: 'column' }}>
+                <div style={{ marginTop: '5em', marginLeft: '2em', flexDirection: 'column' }}>
                     <Header as='h2' dividing style={{ color: 'gray' }}>
                         What is this project about?
                     </Header>
                     <p style={{ fontSize: '17px' }}>
-                        It is an appointment planning app. In this case it is used to schedule chor rehearsals
-                        as well as allow for a sign out functionality from each rehearsal.
+                        It is a daily challenge app. It is used to give yourself daily challenges.
                     </p>
                     <Header as='h2' dividing style={{ color: 'gray' }}>
                         What technologies were used?
@@ -49,7 +48,9 @@ class ProjectMainPage extends Component {
                     <p style={{ fontSize: '17px' }}>
                         <ul>
                             <li>React.js</li>
-                            <li>Firebase</li>
+                            <li>Node</li>
+                            <li>Express.js</li>
+                            <li>Mongo DB</li>
                             <li>HTML/CSS</li>
                         </ul>
                     </p>
@@ -66,18 +67,13 @@ class ProjectMainPage extends Component {
                     </Header>
                     <p style={{ fontSize: '17px', marginBottom: '2em' }}>
                         <p>
-                            <a href='https://github.com/TheoVitkovskiy/chor-termin-planer'>
+                            <a href='https://github.com/TheoVitkovskiy/daily-challenge-app'>
                                 <Icon link bordered inverted name='github' />
                             </a>
-                            <a href='https://chor-termin-planer.netlify.com'>
-                                chor-termin-planer.com
+                            <a href='https://daily-challenge-app.heroku.com'>
+                                daily-challenge-app.com
                             </a>
                         </p>
-                        <p>
-                            <b>Login:</b> admin <br/>
-                            <b>Password:</b> password
-                        </p>
-
                     </p>
 
                 </div>
@@ -87,5 +83,5 @@ class ProjectMainPage extends Component {
     }
 }
 
-export default ProjectMainPage;
+export default ProjectPage;
 

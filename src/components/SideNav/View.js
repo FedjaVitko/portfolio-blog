@@ -8,11 +8,11 @@ const View = ({
 	visible, activeItem, handleItemClick
 }) => (
 	<Sidebar
-		as={Menu}
+		as={ Menu }
 		animation='uncover'
 		width='wide'
 		direction='right'
-		visible={visible}
+		visible={ visible }
 		icon='labeled'
 		vertical
 	>
@@ -20,35 +20,38 @@ const View = ({
 			<Menu.Item 
 				name='home' 
 				className='menu-item' 
-				active = {activeItem === 'home'} 
+				active = { activeItem === 'home' } 
 				onClick = { handleItemClick }
 				color = 'grey'
 			>
 				Home
 			</Menu.Item>
 		</Link>
-		<Link to="/projects">
+		
+		<Link to="/projects/choir-scheduler">
 			<Menu.Item 
 				name='projects' 
 				className='menu-item' 
-				active = {activeItem === 'projects'} 
+				active = { activeItem === 'projects' } 
 				onClick = { handleItemClick }
 				color = 'grey'
 			>
 				Projects
 			</Menu.Item>
 		</Link>
-		<Link to="/blog">
+
+		<Link to="/blogs">
 			<Menu.Item 
 				name='blog' 
 				className='menu-item' 
-				active = {activeItem === 'blog'} 
+				active = { activeItem === 'blog' } 
 				onClick = { handleItemClick }
 				color = 'grey'
 			>
 				Blog
 			</Menu.Item>
 		</Link>
+
 	</Sidebar>
 )
 

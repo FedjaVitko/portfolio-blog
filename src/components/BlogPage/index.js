@@ -13,20 +13,21 @@ class BlogPage extends Component {
     super(props);
 
     this.state = {
-      firstblood: '',
+      markdownContent: '',
+      blogHeader: this.props.match.params.blog,
     }
   }
 
   componentWillMount() {
-    const firstbloodPath = require('blogs/firstblood.md');
+    const markdownPath = require(`blogs/${this.state.blogHeader}.md`);
 
-    fetch(firstbloodPath)
+    fetch(markdownPath)
       .then(response =>  {
         return response.text()
       })
       .then(text => {
         this.setState({
-          firstblood: marked(text),
+          markdownContent: marked(text),
         })
       })
   }
@@ -42,12 +43,19 @@ class BlogPage extends Component {
 
 
   render() {
-    const { firstblood } = this.state;
+    const { markdownContent, blogHeader } = this.state;
+    const blogHeaderFormatted = blogHeader.split('-').join(' ');
+    console.log(blogHeader);
+    const imgUrl = require(`images/blogs/${blogHeader}.png`);
+    console.log(imgUrl);
 
     return (
       <Container text>
-        <ReactMarkdown source={firstblood} />
+        <img width='700px' src={imgUrl} />
+        <h1 style={{textAlign: 'center'}}>{blogHeaderFormatted}</h1>
+        <ReactMarkdown source={markdownContent} />
       </Container>
+
     );
   }
 }

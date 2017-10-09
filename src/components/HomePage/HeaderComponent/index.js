@@ -26,7 +26,7 @@ const HeaderComponent = () =>
 						width: "115px",
 						height: "125px",
 						marginRight: '0.5em',
-						marginBottom: '1.5em',
+						marginBottom: '1em',
 					}}
 					bordered
 					fluid

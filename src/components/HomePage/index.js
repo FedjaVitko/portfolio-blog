@@ -2,8 +2,8 @@ import React from 'react'
 
 import { Container, Divider, Sidebar } from 'semantic-ui-react';
 
-import HeaderComponent from 'components/HeaderComponent';
-import SocialLinks from 'components/SocialLinks';
+import HeaderComponent from './HeaderComponent';
+import SocialLinks from './SocialLinks';
 
 const HomePage = () => 
 (
