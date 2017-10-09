@@ -39,13 +39,13 @@ const View = ({
                                 animationDuration="0.6"
                             />
                         </div>
-                        <Switch>
+                        
                             <Route exact path='/' component={ HomePage } />
                             <Route       path='/blogs/:blog' component={ BlogPage } />
-                            <Route       path='/blogs' component={ BlogMainPage } />
+                            <Route exact path='/blogs' component={ BlogMainPage } />
                             <Route       path='/projects/choir-scheduler' component={ ProjectMainPage } />
                             <Route       path='/projects/daily-challenge-app' component={ ProjectPage } />
-                        </Switch>
+                        
                     </Sidebar.Pusher>
 
                 </Sidebar.Pushable>
