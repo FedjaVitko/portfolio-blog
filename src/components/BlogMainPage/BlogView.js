@@ -2,8 +2,8 @@ import React from 'react';
 
 import { Container, Item } from 'semantic-ui-react';
 
+import Blogs from './Blogs';
 import BlogItem from './BlogItem';
-import Blogs from 'components/BlogMainPage/Blogs';
 
 const Blog = new Blogs();
 
