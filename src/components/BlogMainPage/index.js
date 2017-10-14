@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
-import { Container, Item, Grid, List, Icon, Sticky, Rail } from 'semantic-ui-react';
+import { Grid, List, Icon, Sticky, Rail } from 'semantic-ui-react';
 
 import BlogView from './BlogView';
 import SideView from './SideView';
@@ -25,9 +25,7 @@ class BlogMainPage extends Component {
           </Grid.Column>
           <Grid.Column width={4}>
             <Rail>
-            <Sticky context={this.state.contextRef} onTop={() => { console.log('On TOP!') }} onStick={() => { console.log('Stuck!') }}>
-            <SideView />
-            </Sticky>
+              <SideView />
             </Rail>
           </Grid.Column>
         </Grid.Row>

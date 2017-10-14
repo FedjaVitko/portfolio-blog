@@ -54,12 +54,10 @@ class Blogs extends Component {
             return response.text()
           })
           .then(text => {
-            console.log('Index in dem zweiten then ' + index);
             blogHtmlCopy[index] = text;
           })
           .then(html => {
-            if((arr.length - 1) === index) {
-              console.log('The length is right!');
+            if((arr.length - 1) === index) {              
               this.state.blogHtml = JSON.parse(JSON.stringify(blogHtmlCopy));
               return this.state.blogHtml;
             }
