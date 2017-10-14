@@ -65,7 +65,8 @@ class BlogPage extends Component {
         <Container
           text
           style={{
-            fontSize: '19px' 
+            fontSize: '19px',
+            wordSpacing: '1.5px'
           }}
         >
           <h1 style={{
@@ -86,18 +87,7 @@ class BlogPage extends Component {
             letterSpacing: '0.08em' 
             }}
           >
-            <em>
-              posted in 
-            </em>
-            <a>
-              JavaScript
-            </a>
-            <em>
-              on October 10, 2017 by
-            </em>
-            <a>
-              Fedor Vitkovskiy
-            </a>
+            <em>posted in </em><a>JavaScript</a><em> on October 10, 2017 by</em><a> Fedor Vitkovskiy</a>
           </p>
           <Divider style={{ 
             margin: '1em' 

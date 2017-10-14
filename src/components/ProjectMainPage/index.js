@@ -13,7 +13,9 @@ import Projects from './Projects';
 
 class ProjectMainPage extends Component {
 
-    componentWillMount() {
+    constructor(props) {
+        super(props);
+
         const Project = new Projects();
         
         const currProjectStub = this.props.match.params.project;
