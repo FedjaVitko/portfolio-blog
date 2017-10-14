@@ -4,8 +4,6 @@ import ReactDOM from 'react-dom';
 import ReactMarkdown from 'react-markdown';
 import marked from 'marked';
 
-import Blogs from 'components/BlogMainPage/Blogs';
-
 import { Container, Divider, Rail, Sticky, Header } from 'semantic-ui-react';
 
 import Prism from 'prismjs';
@@ -14,8 +12,6 @@ class BlogPage extends Component {
 
   constructor(props) {
     super(props);
-
-    const Blog = new Blogs();
 
     this.state = {
       markdownContent: '',
