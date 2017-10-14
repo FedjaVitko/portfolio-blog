@@ -1,20 +1,20 @@
 import React from 'react';
 
-import { Sidebar, Segment } from 'semantic-ui-react';
+import { Sidebar, Segment, Rail, Sticky, Header } from 'semantic-ui-react';
 
 import Hamburger from 'react-hamburger-menu';
 
 import SideNav from 'components/SideNav';
+import SocialMediaSidebar from './SocialMediaSidebar';
 import Routes from './Routes';
 
 const View = ({
-    visible, blogs, toggleVisibility, handleClick, open
+    visible, blogs, toggleVisibility, open, handleContextRef, contextRef, socialMediaVisible
 }) => {
     return (
-        <div>
+        <div ref={handleContextRef}>
             <Sidebar.Pushable
                 as={ Segment }
-                attached='bottom' 
             >
                 <SideNav 
                     visible={ visible }
@@ -42,6 +42,11 @@ const View = ({
                 </Sidebar.Pusher>
 
             </Sidebar.Pushable>
+            <Rail>
+                <Sticky context={contextRef}>
+                  <SocialMediaSidebar visible={socialMediaVisible}/>
+                </Sticky>
+            </Rail>
         </div>
     );
 }

@@ -4,32 +4,30 @@ import View from './View';
 
 class App extends Component {
 
-  constructor() {
-	super();
+	constructor() {
+		super();
 
-	this.state = {
-		visible: false,
-		open: false,
-		blogs: {
-			"FirstBlog"  : { id: 1, filePath: './blogs/firstblog.md' },
-			"SecondBlog" : { id: 2, filePath: './blogs/secondblog.md' },
-			"ThirdBlog"  : { id: 3, filePath: './blogs/thirdblog.md' },
-			"FourthBlog" : { id: 4, filePath: './blogs/fourthblog.md' },
-		},
+		this.state = {
+			visible: false,
+			open: false,
+			socialMediaVisible: false
+		}
 	}
-  }
-  
-  toggleVisibility = () => this.setState({ 
-	  visible: !this.state.visible,
-	  open: !this.state.open 
+
+	toggleVisibility = () => this.setState({ 
+		visible: !this.state.visible,
+		open: !this.state.open 
 	})
 
-  render() {
+	handleContextRef = contextRef => this.setState({ contextRef })
+
+  	render() {
 		return (
 			<View 
 				{...this.state} 
 				toggleVisibility = {this.toggleVisibility}
-				handleClick = { this.handleClick }
+				handleContextRef = {this.handleContextRef}
+				contextRef = {this.state.contextRef}
 			/>
 		)
   	}

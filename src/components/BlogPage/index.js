@@ -9,7 +9,8 @@ import { Container, Divider, Rail, Sticky, Header } from 'semantic-ui-react';
 import Prism from 'prismjs';
 
 class BlogPage extends Component {
-
+  
+  
   constructor(props) {
     super(props);
 
