@@ -3,7 +3,7 @@ import React from 'react';
 import { Container, Item } from 'semantic-ui-react';
 
 import BlogItem from './BlogItem';
-import Blogs from './Blogs.js';
+import Blogs from 'components/BlogMainPage/Blogs';
 
 const Blog = new Blogs();
 
