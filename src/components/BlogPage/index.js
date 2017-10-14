@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 
 import ReactMarkdown from 'react-markdown';
 import marked from 'marked';
 
-import { Container } from 'semantic-ui-react';
+import Blogs from 'components/BlogMainPage/Blogs';
+
+import { Container, Divider, Rail, Sticky, Header } from 'semantic-ui-react';
 
 import Prism from 'prismjs';
 
@@ -12,11 +15,15 @@ class BlogPage extends Component {
   constructor(props) {
     super(props);
 
+    const Blog = new Blogs();
+
     this.state = {
       markdownContent: '',
-      blogHeader: this.props.match.params.blog,
+      blogHeader: this.props.match.params.blog
     }
   }
+  
+  handleContextRef = contextRef => this.setState({ contextRef })
 
   componentWillMount() {
     const markdownPath = require(`blogs/${this.state.blogHeader}.md`);
@@ -33,6 +40,12 @@ class BlogPage extends Component {
   }
 
   componentDidMount() {
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://http-fedor-vitkovskiy-netlify-com.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
     Prism.highlightAll();
   }
 
@@ -45,17 +58,66 @@ class BlogPage extends Component {
   render() {
     const { markdownContent, blogHeader } = this.state;
     const blogHeaderFormatted = blogHeader.split('-').join(' ');
-    console.log(blogHeader);
     const imgUrl = require(`images/blogs/${blogHeader}.png`);
-    console.log(imgUrl);
 
     return (
-      <Container text>
-        <img width='700px' src={imgUrl} />
-        <h1 style={{textAlign: 'center'}}>{blogHeaderFormatted}</h1>
-        <ReactMarkdown source={markdownContent} />
-      </Container>
-
+      <div ref={this.handleContextRef}>
+        <Container
+          text
+          style={{
+            fontSize: '19px' 
+          }}
+        >
+          <h1 style={{
+            textAlign: 'center',
+            fontSize: '35px',
+            fontWeight: '500',
+            letterSpacing: '0.02em' 
+            }}
+          >
+            { blogHeaderFormatted }
+          </h1>
+          <p style={{
+            textAlign: 'center',
+            fontSize: '16px',
+            marginTop: '2em',
+            color: 'grey',
+            fontWeight: '100',
+            letterSpacing: '0.08em' 
+            }}
+          >
+            <em>
+              posted in 
+            </em>
+            <a>
+              JavaScript
+            </a>
+            <em>
+              on October 10, 2017 by
+            </em>
+            <a>
+              Fedor Vitkovskiy
+            </a>
+          </p>
+          <Divider style={{ 
+            margin: '1em' 
+            }}
+          />
+          <img
+            width='700px'
+            src={ imgUrl }
+          />
+          <Divider style={{
+              margin: '1.2em'
+            }}
+          />
+          <ReactMarkdown source={markdownContent} />
+          <div
+            id="disqus_thread"
+            style={{ marginTop: '2em' }}
+          />
+        </Container>
+      </div>
     );
   }
 }

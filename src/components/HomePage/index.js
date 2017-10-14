@@ -7,7 +7,7 @@ import SocialLinks from './SocialLinks';
 
 const HomePage = () => 
 (
-    <Container>
+    <Container style={{ marginBottom: '8.3em' }}>
             
             <HeaderComponent />
 

@@ -28,7 +28,7 @@ const View = ({
 			</Menu.Item>
 		</Link>
 		
-		<Link to="/projects/choir-scheduler">
+		<Link to="/projects/daily-challenge-app">
 			<Menu.Item 
 				name='projects' 
 				className='menu-item' 
