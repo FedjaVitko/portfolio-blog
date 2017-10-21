@@ -4,19 +4,35 @@ import ReactDOM from 'react-dom';
 import ReactMarkdown from 'react-markdown';
 import marked from 'marked';
 
+import { Helmet } from 'react-helmet';
+
 import { Container, Divider, Rail, Sticky, Header } from 'semantic-ui-react';
+import { blogs } from 'Blogs';
 
 import Prism from 'prismjs';
+
 
 class BlogPage extends Component {
   
   
   constructor(props) {
     super(props);
+    
+    let blog;
+    console.log(this.props.location.pathname);
+    const blogHeaderFormatted = this.props.match.params.blog.split('-').join(' ');
+    for (let i = 0; i < blogs.length; i++) {
+      if(blogs[i].header == blogHeaderFormatted) {
+        blog = blogs[i];
+      }
+    }
+
+    console.log(blog);
 
     this.state = {
       markdownContent: '',
-      blogHeader: this.props.match.params.blog
+      blogHeader: this.props.match.params.blog,
+      blog
     }
   }
   
@@ -53,12 +69,21 @@ class BlogPage extends Component {
 
 
   render() {
-    const { markdownContent, blogHeader } = this.state;
-    const blogHeaderFormatted = blogHeader.split('-').join(' ');
+    const { markdownContent, blogHeader, blog } = this.state;
     const imgUrl = require(`images/blogs/${blogHeader}.png`);
 
     return (
       <div ref={this.handleContextRef}>
+        <Helmet>
+            <title>{blog.header}</title>
+            <meta name="description" content={ blog.description } />
+            <meta name="keywords" content={ blog.tags.join() } />
+            <meta name="twitter:card" content="summary" />
+            <meta property="og:url" content={`https://fedor-vitkovskiy.netlify.com${this.props.location.pathname}`} />
+            <meta property="og:title" content={blog.header} />
+            <meta property="og:description" content={blog.description} />
+            <meta property="og:image" content="http://graphics8.nytimes.com/images/2011/12/08/technology/bits-newtwitter/bits-newtwitter-tmagArticle.jpg" />
+        </Helmet>
         <Container
           text
           style={{
@@ -73,7 +98,7 @@ class BlogPage extends Component {
             letterSpacing: '0.02em' 
             }}
           >
-            { blogHeaderFormatted }
+            { blog.header }
           </h1>
           <p style={{
             textAlign: 'center',
