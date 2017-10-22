@@ -82,7 +82,7 @@ class BlogPage extends Component {
             <meta property="og:url" content={`https://fedor-vitkovskiy.netlify.com${this.props.location.pathname}`} />
             <meta property="og:title" content={blog.header} />
             <meta property="og:description" content={blog.description} />
-            <meta property="og:image" content="http://graphics8.nytimes.com/images/2011/12/08/technology/bits-newtwitter/bits-newtwitter-tmagArticle.jpg" />
+            <meta property="og:image" content={imgUrl} />
         </Helmet>
         <Container
           text
