@@ -8,22 +8,36 @@ import SideView from './SideView';
 
 class BlogMainPage extends Component {
 
-  state = {}
+  constructor(props) {
+    super(props);
 
-  handleContextRef = contextRef => this.setState({ contextRef })
+    this.state = {}
+
+    if(this.props.match.params.monthYear) 
+      this.setState({
+        monthYear: this.props.match.params.monthYear,
+      })
+    }
+    
+  componentWillReceiveProps(nextProps){
+
+    this.setState({
+      monthYear: nextProps.match.params.monthYear,
+    }, () => console.log(this.state.monthYear))
+  }
 
   componentDidMount() {
     window.scrollTo(0, 0);
   }
-
+  
   render() {
     return (
       <Grid columns={2} style={{ marginLeft: '9em' }}>
         <Grid.Row>
           <Grid.Column width={10}>
-            <BlogView />
+            <BlogView monthYear={this.state.monthYear} />
           </Grid.Column>
-          <Grid.Column width={4}>
+          <Grid.Column width={3}>
             <Rail>
               <SideView />
             </Rail>
@@ -33,5 +47,6 @@ class BlogMainPage extends Component {
     );
   }
 }
+
 
 export default BlogMainPage;

@@ -8,6 +8,7 @@ import { Helmet } from 'react-helmet';
 
 import { Container, Divider, Rail, Sticky, Header } from 'semantic-ui-react';
 import { blogs } from 'Blogs';
+import ShareLinks from './ShareLinks';
 
 import Prism from 'prismjs';
 
@@ -19,7 +20,6 @@ class BlogPage extends Component {
     super(props);
     
     let blog;
-    console.log(this.props.location.pathname);
     const blogHeaderFormatted = this.props.match.params.blog.split('-').join(' ');
     for (let i = 0; i < blogs.length; i++) {
       if(blogs[i].header == blogHeaderFormatted) {
@@ -104,12 +104,11 @@ class BlogPage extends Component {
             textAlign: 'center',
             fontSize: '16px',
             marginTop: '2em',
-            color: 'grey',
             fontWeight: '100',
             letterSpacing: '0.08em' 
             }}
           >
-            <em>posted in </em><a>JavaScript</a><em> on October 10, 2017 by</em><a> Fedor Vitkovskiy</a>
+            posted in <a>JavaScript</a> on October 10, 2017 by<a> Fedor Vitkovskiy</a>
           </p>
           <Divider style={{ 
             margin: '1em' 
@@ -124,6 +123,7 @@ class BlogPage extends Component {
             }}
           />
           <ReactMarkdown source={markdownContent} />
+          <ShareLinks relativePath={this.props.location.pathname} />
           <div
             id="disqus_thread"
             style={{ marginTop: '2em' }}

@@ -23,10 +23,11 @@ const View = ({
                     toggleVisibility={ toggleVisibility }
                 />
                 
-                <Sidebar.Pusher>
-                    <div style={{
-                        marginLeft: '92%',
-                        marginTop: '3em' 
+                <Sidebar.Pusher style={{ minHeight: '100vh' }}>
+                    <div 
+                        style={{
+                            marginLeft: '92%',
+                            marginTop: '3em',
                         }}
                     >
                         <Hamburger 
@@ -46,9 +47,7 @@ const View = ({
             </Sidebar.Pushable>
             <Rail style={{ width: '90px' }}>
                 <Sticky context={contextRef}>
-                  <Image src={foto3} width='60px' style={{marginLeft: '1em', marginTop: '1em'}}/>
-                  <h3 style={{ fontWeight: '100', textAlign: 'center'}}>Fedor Vitkovskiy</h3>
-                  <SocialMediaSidebar visible={socialMediaVisible}/>
+                  {/* <SocialMediaSidebar visible={socialMediaVisible}/> */}
                 </Sticky>
             </Rail>
         </div>

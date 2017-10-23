@@ -23,6 +23,69 @@ export const blogs = [
   {
     imgSrc: 'images/blogs/React-Redux.png',
     header: 'React Redux',
+    date: '07.09.2017',
+    description: 'At Codementor, we’ve used React + Redux to build several projects. There are projects made entirely with Redux, and there are projects where we’ve used Redux along with an existing Fluxxor project.',
+    tags: ['Programming', 'React']
+  },
+  {
+    imgSrc: 'images/blogs/React-Redux.png',
+    header: 'React Redux',
+    date: '07.10.2017',
+    description: 'At Codementor, we’ve used React + Redux to build several projects. There are projects made entirely with Redux, and there are projects where we’ve used Redux along with an existing Fluxxor project.',
+    tags: ['Programming', 'React']
+  },
+  {
+    imgSrc: 'images/blogs/React-Redux.png',
+    header: 'React Redux',
+    date: '23.08.2017',
+    description: 'At Codementor, we’ve used React + Redux to build several projects. There are projects made entirely with Redux, and there are projects where we’ve used Redux along with an existing Fluxxor project.',
+    tags: ['Programming', 'React']
+  },
+  {
+    imgSrc: 'images/blogs/React-Redux.png',
+    header: 'React Redux',
+    date: '07.05.2017',
+    description: 'At Codementor, we’ve used React + Redux to build several projects. There are projects made entirely with Redux, and there are projects where we’ve used Redux along with an existing Fluxxor project.',
+    tags: ['Programming', 'React']
+  },
+  {
+    imgSrc: 'images/blogs/React-Redux.png',
+    header: 'React Redux',
+    date: '07.05.2017',
+    description: 'At Codementor, we’ve used React + Redux to build several projects. There are projects made entirely with Redux, and there are projects where we’ve used Redux along with an existing Fluxxor project.',
+    tags: ['Programming', 'React']
+  },
+  {
+    imgSrc: 'images/blogs/React-Redux.png',
+    header: 'React Redux',
+    date: '07.05.2017',
+    description: 'At Codementor, we’ve used React + Redux to build several projects. There are projects made entirely with Redux, and there are projects where we’ve used Redux along with an existing Fluxxor project.',
+    tags: ['Programming', 'React']
+  },
+  {
+    imgSrc: 'images/blogs/React-Redux.png',
+    header: 'React Redux',
+    date: '07.05.2017',
+    description: 'At Codementor, we’ve used React + Redux to build several projects. There are projects made entirely with Redux, and there are projects where we’ve used Redux along with an existing Fluxxor project.',
+    tags: ['Programming', 'React']
+  },
+  {
+    imgSrc: 'images/blogs/React-Redux.png',
+    header: 'React Redux',
+    date: '07.05.2017',
+    description: 'At Codementor, we’ve used React + Redux to build several projects. There are projects made entirely with Redux, and there are projects where we’ve used Redux along with an existing Fluxxor project.',
+    tags: ['Programming', 'React']
+  },
+  {
+    imgSrc: 'images/blogs/React-Redux.png',
+    header: 'React Redux',
+    date: '07.05.2017',
+    description: 'At Codementor, we’ve used React + Redux to build several projects. There are projects made entirely with Redux, and there are projects where we’ve used Redux along with an existing Fluxxor project.',
+    tags: ['Programming', 'React']
+  },
+  {
+    imgSrc: 'images/blogs/React-Redux.png',
+    header: 'React Redux',
     date: '07.05.2017',
     description: 'At Codementor, we’ve used React + Redux to build several projects. There are projects made entirely with Redux, and there are projects where we’ve used Redux along with an existing Fluxxor project.',
     tags: ['Programming', 'React']
